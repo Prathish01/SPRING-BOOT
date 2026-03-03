@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+<bean id="carl" class="com.hibernate.spring_beans" primary="true">
+
+   <property name="carId" value="101" />
+   <property name="brand" value="TATA"/>
+   <property name="model" value="Punch"/>
+   <property name="colour" value="White"/>
+	<property name="price" value="7Lacks"/>
+	</bean>
+<bean id="carl" class="com.hibernate.spring_beans" primary="true">
+	 <property name="carId" value="102"/>
+   <property name="brand" value="TATA"/>
+   <property name="model" value="Harrier"/>
+   <property name="colour" value="White"/>
+	<property name="price" value="20Lacks"/>
+	
+</bean>	
+<bean id="student1" class="com.hibernate.spring_beans" >
+	<constructor-arg name="studentId" value="1"/>
+	<constructor-arg name="name" value="Ramesh"/>
+	<constructor-arg name="email" value="ramesh@gamil.com"/>
+	<constructor-arg name="address" value="Chennai"/>
+	<constructor-arg name="contact" value="9802446291"/>
+	</bean>   
+</beans> 
