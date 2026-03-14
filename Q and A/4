@@ -1,0 +1,47 @@
+16. Scope of bean
+It is single bean definition made to the spring bean.
+
+singleton-If the scope is singleton then spring container will create only one instance of bean and same instance is used for all request of that bean.
+
+prototype-If the scope is prototype then spring container will create 
+new instance for every request made.
+
+@Scope
+It is class level annotation.It must be used along with @Component.
+It specifies the scope of objects for the specified class.
+By default, the spring framework creates exactly one object for component class,which means by default component class is a singleton class.
+If we want to change the scope of the class to allow multiple objects to be created ,then we need to set the scope value as prototype.
+@Scope(value="prototype")
+
+-----------------------------------------------------
+
+17. Interface dependency Injection
+It is a type of dependency injection where interface is used to inject the dependencies (implementation class of an interface is used to inject the dependency).
+
+Steps:
+Create an interface
+Create implementation class
+Create spring config class
+Create Driver class
+
+---------------------------------------------------
+18. 
+
+When we have reference dependency of interface and used @Autowired on it,Spring container will create object of its impementation class and do the dependency injection.
+
+When we have 2 implementation class for same interface here it will lead to NoUniqueBeanDefinitionException.
+
+To avoid this we use @Primary annotation on any one of the implementation class.
+
+@Primary is class level annotation used to prioratize one implementation class to inform spring container to inject object to interface type dependency. 
+------------------------------------------------------------
+
+19. @Bean
+
+it is method level annotation.
+
+When we predefined class whoes object has to be created by spring container then we cannot add @Component on that predefined class.
+
+Hence in config class we create a method which returns me that predefined class
+object.On that method we specify @Bean.
+So the spring container will understand to take object from config class and do the dependency injection.
