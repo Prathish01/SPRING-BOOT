@@ -1,0 +1,55 @@
+1. SpringFramework
+
+-It is java based framework.
+-Developed by Rod Johnson in the year 2003.
+-Initially named as interface21.
+-It is considered as framework of frameworks as it provides support to other frameworks like Structs,EJB,Hibernate,JPA etc.
+
+-------------------------------------------------------
+2. Advantages of SpringFramework:
+
+-It is light weight open source framework.
+-It is called as Dependency Injection framework.
+-It is a powerfull abstraction tool.
+-It will provide 100% security for web application.
+-It can inject any no of dependencies.
+-Spring framework helps us to acheive loose coupling because of dependency injection.
+-Spring applications are easy to test due to dependency injection mechanism.
+-Since Spring framework supports other frameworks it is easy and faster to develop web applications.
+-SpringFramework provides predefined templates for JDBC,Hibernate,JPA etc. so there is no need to write too much of code.
+
+-------------------------------------------------------
+3. Dependency--is nothing but datamembers.
+
+Dependency injection--
+-It is a design pattern to inject the dependency(initialize the datamembers).
+-It is a technique in which an object receives other objects that it depends on.
+-It is fundamental aspect of spring framework.
+
+for example:-----Suppose class Car is dependent on class Engine,
+Now this can creates many problems in real world applications including system failure.
+Hence such dependencies needs to be avoided.
+Spring resolves such dependencies using dependency injection.
+Here it indicates that  class engine will be injected into class Car by spring.
+Dependency injection makes the code easy to test and reuse.
+While creating complex java application the classes should be independent of each other to improve possibility of reusing this classes and to test them independently.
+Dependency injection allows these classes to be together and at the same time keeps them independently.
+
+--------------------------------------------------------------
+4. IOC
+
+-IOC stands for Inversion of control--(control of object creation is given to spring itself rather than programmer creating the object hence called as Inversion of Control).
+-It is a process where spring framework will inject one object into another object (and it is done automatically by spring container at runtime dynamically). 
+-Thus ,IOC makes The code loosely coupled.In such case ,there is no need to modify the code if our logic is moved to new environment.
+-In spring framework ,IOC container is responsible for injecting dependency.
+
+--------------------------------------------------------------------------------------
+5. Spring Container--maintains lifecycle of Spring
+
+--They are of different types, one among them is Spring IOC container.
+--Key feature of IOC Container is Dependency Injection.
+--The spring IOC container is the core of spring framework.
+--IOC container will read the xml file/config class.
+--It creates object ,configure and manage the entire life cycle of that object.
+--The IOC container uses Dependency Injection to manage the components of the application.
+--We can provide information about object creation (configuration data) to the IOC container 
