@@ -1,0 +1,99 @@
+SPRING CORE – THEORY NOTES
+
+1. What is Spring Framework?
+Definition
+Spring is a lightweight, open-source Java framework used to build enterprise applications easily.
+
+It provides:
+Loose coupling
+Dependency Injection
+Better modularity
+Easy testing
+
+---------------------------------------------------------
+Loose Coupling in Spring 
+2. What is Coupling?
+
+Definition
+Coupling means the degree of dependency between two classes or modules.
+It shows how strongly one class is connected to another class.
+
+Types of Coupling
+There are two types:
+1.Tight Coupling
+2.Loose Coupling
+
+3. Tight Coupling
+Definition
+When one class directly creates and depends on another class, it is called Tight Coupling.
+
+Example (Without Spring)
+class Mobile {
+    void call() {
+        System.out.println("Calling...");
+    }
+}
+
+class Customer {
+    Mobile mob = new Mobile();   // tightly coupled
+
+    void usePhone() {
+        mob.call();
+    }
+}
+
+Problems
+Cannot change Mobile easily
+Hard to test
+Hard to maintain
+Code is rigid
+Reusability is low
+
+Suppose you want:
+Change Mobile → iPhone
+You must modify:Customer class
+Not good design
+
+Loose Coupling
+Definition
+When classes depend on abstraction (interface) instead of concrete implementation, it is called Loose Coupling.
+Objects are independent.
+
+Example (Using Interface)
+interface Mobile {
+    void call();
+}
+
+class Samsung implements Mobile {
+    public void call() {
+        System.out.println("Samsung calling");
+    }
+}
+
+class Nokia implements Mobile {
+    public void call() {
+        System.out.println("Nokia calling");
+    }
+}
+
+Now Customer
+class Customer {
+    Mobile mob;
+
+    Customer(Mobile mob) {
+        this.mob = mob;
+    }
+}
+
+No new keyword
+Depends only on interface
+With Spring (Best Example)
+@Component
+class Samsung implements Mobile { }
+
+@Component
+class Customer {
+
+    @Autowired
+    Mobile mob;   // Spring injects dependency
+}
