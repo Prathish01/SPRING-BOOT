@@ -1,0 +1,144 @@
+3. What is IOC (Inversion of Control)?
+Definition
+IOC means:Object creation and management is done by Spring, not by the programmer.
+
+Without IOC (Traditional Java)
+Mobile m = new Mobile();
+Customer c = new Customer(m);
+
+Programmer creates objects manually → Tight coupling
+With IOC (Spring)
+@Autowired
+Mobile mob;
+
+Spring creates and injects objects automatically → Loose coupling 
+
+Benefits of IOC
+Reduces dependency
+Easy maintenance
+Easy testing
+Code becomes flexible
+-------------------------------------------------------------------
+
+4. Spring Container
+
+Definition:Spring Container is responsible for:
+Creating objects (beans)
+Injecting dependencies
+Managing lifecycle
+
+Types of Containers
+1️.BeanFactory
+Basic container
+Lazy initialization
+Lightweight
+
+2️.ApplicationContext (Mostly used)
+Advanced container
+Eager initialization
+More features
+
+Example:
+AnnotationConfigApplicationContext context =
+    new AnnotationConfigApplicationContext("com.first");
+------------------------------------------------------------
+
+5. What is a Bean?
+
+Definition
+A Bean is:
+An object that is created and managed by Spring container.
+
+Example
+@Component
+public class Apple { }
+
+Apple object → Bean
+------------------------------------------------------------
+
+6. Ways to Create Beans?
+
+Method 1 → @Component
+Meaning:Automatically creates bean using component scanning.
+
+Example
+@Component
+public class Mobile { }
+
+Used for
+Our own classes
+
+Method 2 → @Bean
+Meaning:Manual bean creation inside configuration class.
+
+Example
+@Bean
+public Scanner scanner() {
+    return new Scanner(System.in);
+}
+
+Used for
+Third-party classes
+Inbuilt classes
+Collections
+When source code cannot be modified
+
+Difference: @Component vs @Bean
+Feature		@Component	@Bean
+Type		Automatic	Manual
+Location	Class		Method
+Use		Our classes	External classes
+----------------------------------------------------------
+
+7. @Configuration
+
+Definition
+Marks a class as:
+Spring configuration class
+
+Example:
+
+@Configuration
+public class MyConfig { }
+
+Used to define:@Bean methods
+Application settings
+-----------------------------------------------
+
+8. Dependency Injection (DI)
+
+Definition
+DI means::Supplying required objects to another object automatically.
+
+Example
+Customer needs Mobile
+Instead of:
+Customer creates Mobile
+
+Spring:Spring gives Mobile to Customer
+-----------------------------------------------------\
+
+9. Types of Dependency Injection
+
+1.Field Injection
+@Autowired
+Mobile mob;
+
+Pros: Easy
+Cons:Hard to test,Not recommended
+
+2️.Setter Injection
+@Autowired
+public void setMobile(Mobile m)
+
+Pros:Optional dependencies
+
+3️.Constructor Injection (BEST PRACTICE)
+@Autowired
+public Customer(Mobile m)
+
+Pros
+✔ Mandatory dependencies
+✔ Safe
+✔ Test friendly
+✔ Recommended
