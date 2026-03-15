@@ -1,1 +1,78 @@
+1, Springboot
+
+-Spring Boot is a project that is built on the top of the Spring Framework.
+-It provides an easier and faster way to set up, configure, and run both simple and web-based applications.
+-It is a Spring module that provides the RAD (Rapid Application Development) feature to the Spring Framework. 
+
+-Springboot is used to develop web service.
+-WebApplication:Any application accessed with the help of internet(data+stylecode).
+-WebService:a service which is accessed over an internet(only data)
+-All web service are web application but all web application are not web services.
+
+--------------------------------------------------------------------------------
+
+2, To bulid web service we need to follow certain rules or architecture
+we use REST architecture.
+REST stands for Representational State Transfer
+when we develop web service using REST we call it as Restfull web service.
+
+REST API
+-Also called as RestFul API
+-Basic function of REST API is same as browsing the internet.The client contacts the server by using the API whenever it requires a resources.
+-A REST API is a way for two systems to communicate using the http technologies.
+-REST API uses only HTTP Requests.
+-A REST API can accept HTTP request like get,post,delete,put etc and send back HTTP response.
+
+-----------------------------------------------------------------------------
+
+3, Why should we use Spring Boot Framework?
+
+-The dependency injection approach is used in Spring Boot.
+-It contains powerful database transaction management capabilities.
+-It simplifies integration with other Java frameworks like JPA/Hibernate ORM, Struts, etc.
+-It reduces the cost and development time of the application.
+-Springboot contains all the functionality of spring framework which means application
+development is much easier.
+------------------------------------------------------------------------------
+
+4, Difference between Spring and SpringBoot
+
+1.Spring Framework is used to build applications like StandAlone application.
+	Spring boot framework is used mainly to develop REST API
+2.The main feature of spring framework is dependency injection.
+	The main feature of spring boot framework is auto configuration.
+3.To run spring application we need to configure the servers explicitly.
+	springboot offers built in servers such as Tomcat.
+4.spring framework requires too many lines of code even for minimal task.
+	we can avoid biolerplate code in springboot which reduces the code size as well as the development time.
+5.Testing the spring application is difficult due to large amount of source code.
+	Testing the springboot application is easy due to reduced code size.
+6.In spring framework configuration is required either through annotation ot through xml files
+	There is no need for any xml configuration.
+
+-----------------------------------------------------------------------
+
+5. Spring boot helps to develop web service:
+
+-To design web service we need to create endpoints.
+-Endpoints are nothing but url.
+-To create end points we need to create controller class in springboot application.
+-Any class annotated with @RestController is controller class.
+
+6. How springboot works?
+
+-When request comes ,request object will contain some url.
+-Now spring container will go and look controller class,checks for any method is mapped for that url in the request.
+-In controller class we are going to create mapping,each url will have different mapping.
+-If mapping is present then it will trigger that method.
+---------------------------------------------------------------------------------
+7. To do Mapping we have multiple annotations
+
+Annotation--------Purpose of method----Annotation
+@GetMapping----To get the data-----GET
+@PostMapping---To save the data---POST
+@PutMapping----To update data-----PUT
+@DeleteMapping--To delete data-----DELETE
+-----------------------------------------------------------------------------
+
 
