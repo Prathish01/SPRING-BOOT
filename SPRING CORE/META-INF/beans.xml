@@ -4,6 +4,7 @@
     xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+	
     <!-- bean definitions here -->
 <bean id="carl" class="com.hibernate.spring_beans" primary="true">
 
@@ -28,4 +29,6 @@
 	<constructor-arg name="address" value="Chennai"/>
 	<constructor-arg name="contact" value="9802446291"/>
 	</bean>   
+
+	
 </beans> 
