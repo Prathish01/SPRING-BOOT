@@ -49,6 +49,7 @@ public class UserController {
     	return new ResponseEntity<>(structure,HttpStatus.OK);
 	
     }
+	
 @GetMapping("/delete/{userId}")
 public ResponseEntity<?> deleteuser(@PathVariable int userId)
 {
@@ -63,7 +64,6 @@ ResponseStructure<String> Structure = userService.deleteuser(userId);
 	   
    }
     
-
 }
 
 //neeed to add page details as new function 
